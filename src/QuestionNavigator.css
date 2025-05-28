@@ -1,11 +1,10 @@
 .question-navigator {
-    display: flex; /* Arrange numbers in a row */
-    flex-wrap: wrap; /* Allow numbers to wrap to the next line if too many */
-    margin-bottom: 20px; /* Space below the navigator */
+    display: flex; 
+    flex-wrap: wrap; 
+    margin-bottom: 20px; 
     padding: 10px;
-    border: 1px solid #444; /* Border like in your image */
-    border-radius: 5px;
-    justify-content: center; /* Center the buttons if they don't fill the width */
+    border: 1px solid #444; 
+    justify-content: center; 
 }
 
 .nav-button {
@@ -25,8 +24,6 @@
 }
 
 .nav-button.current {
-    background-color: #646cff; /* Highlight color for the current question */
-    color: white;
-    border-color: #535bf2;
+    background-color: #646cff; 
     font-weight: bold;
 }

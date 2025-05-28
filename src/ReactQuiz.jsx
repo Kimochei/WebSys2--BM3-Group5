@@ -1,6 +1,8 @@
 import './App.css'
 import QuestionNavigator from './QuestionNavigator';
 import './QuestionNavigator.css';
+import QuizResults from './QuizResults';
+import './QuizResults.css';
 import {useState, useEffect} from 'react';
 
 // this quiz is temporary, please check if there's something I missed or did wrong
@@ -81,11 +83,12 @@ function Quiz() {
 
     if (quizStarted && quizCompleted) {
         return (
-            <div>
-                <h2>Quiz Completed!</h2>
-                <p>Your score: {score} / {questions.length}</p>
-                <button onClick={handleRestartQuiz}>Restart Quiz</button>
-            </div>
+            <QuizResults
+                questions={questions}
+                answers={answers}
+                score={score}
+                onRestartQuiz={handleRestartQuiz}
+            />
         );
     }
 
@@ -174,7 +177,7 @@ function Quiz() {
                 totalQuestions={questions.length}
                 currentQuestionIndex={currentQuestionIndex}
                 onNavigate={handleNavigateToQuestion}/>
-                
+
                 <h2>React Quiz - Question {currentQuestionIndex + 1} of {questions.length}</h2>
                 <h2>React Quiz</h2>
                 {renderQuestion()}
