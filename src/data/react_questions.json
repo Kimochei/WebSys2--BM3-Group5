@@ -1,0 +1,284 @@
+[
+  {
+    "id": 1,
+    "question": "What describes States best?",
+    "type": "multiple",
+    "choices": [
+      {
+        "id": "1",
+        "value": "Immutable data"
+      },
+      {
+        "id": "2",
+        "value": "Mutable data used to control component behavior"
+      },
+      {
+        "id": "3",
+        "value": "A type of prop"
+      },
+      {
+        "id": "4",
+        "value": "Global variable"
+      }
+    ],
+    "answer": "2"
+  },
+  {
+    "id": 2,
+    "question": "React is a framework.",
+    "type": "binary",
+    "answer": false
+  },
+  {
+    "id": 3,
+    "question": "What is the command to create a new React app using Create React App?",
+    "type": "identification",
+    "answer": "npx create-react-app"
+  },
+  {
+    "id": 4,
+    "question": "Which method is used to pass data from parent to child components?",
+    "type": "multiple",
+    "choices": [
+      {
+        "id": "1",
+        "value": "State"
+      },
+      {
+        "id": "2",
+        "value": "Hooks"
+      },
+      {
+        "id": "3",
+        "value": "Props"
+      },
+      {
+        "id": "4",
+        "value": "Context"
+      }
+    ],
+    "answer": "3"
+  },
+  {
+    "id": 5,
+    "question": "React uses a virtual DOM to improve performance.",
+    "type": "binary",
+    "answer": true
+  },
+  {
+    "id": 6,
+    "question": "What is the correct hook to use for side effects?",
+    "type": "multiple",
+    "choices": [
+      {
+        "id": "1",
+        "value": "useState"
+      },
+      {
+        "id": "2",
+        "value": "useEffect"
+      },
+      {
+        "id": "3",
+        "value": "useContext"
+      },
+      {
+        "id": "4",
+        "value": "useMemo"
+      }
+    ],
+    "answer": "2"
+  },
+  {
+    "id": 7,
+    "question": "What does JSX stand for?",
+    "type": "identification",
+    "answer": "javascript xml"
+  },
+  {
+    "id": 8,
+    "question": "Which hook is used to manage local component state?",
+    "type": "multiple",
+    "choices": [
+      {
+        "id": "1",
+        "value": "useEffect"
+      },
+      {
+        "id": "2",
+        "value": "useState"
+      },
+      {
+        "id": "3",
+        "value": "useReducer"
+      },
+      {
+        "id": "4",
+        "value": "useCallback"
+      }
+    ],
+    "answer": "2"
+  },
+  {
+    "id": 9,
+    "question": "React components must return a single parent element.",
+    "type": "binary",
+    "answer": true
+  },
+  {
+    "id": 10,
+    "question": "What keyword is used to create a component class?",
+    "type": "multiple",
+    "choices": [
+      {
+        "id": "1",
+        "value": "component"
+      },
+      {
+        "id": "2",
+        "value": "ReactComponent"
+      },
+      {
+        "id": "3",
+        "value": "class"
+      },
+      {
+        "id": "4",
+        "value": "extends"
+      }
+    ],
+    "answer": "3"
+  },
+  {
+    "id": 11,
+    "question": "What is the correct file extension for React components?",
+    "type": "multiple",
+    "choices": [
+      {
+        "id": "1",
+        "value": ".jsx"
+      },
+      {
+        "id": "2",
+        "value": ".react"
+      },
+      {
+        "id": "3",
+        "value": ".html"
+      },
+      {
+        "id": "4",
+        "value": ".js"
+      }
+    ],
+    "answer": "1"
+  },
+  {
+    "id": 12,
+    "question": "What does the useContext hook do?",
+    "type": "identification",
+    "answer": "accesses context value"
+  },
+  {
+    "id": 13,
+    "question": "JSX allows you to write HTML in JavaScript.",
+    "type": "binary",
+    "answer": true
+  },
+  {
+    "id": 14,
+    "question": "Which lifecycle method is invoked immediately after a component is mounted?",
+    "type": "multiple",
+    "choices": [
+      {
+        "id": "1",
+        "value": "componentWillMount"
+      },
+      {
+        "id": "2",
+        "value": "componentDidMount"
+      },
+      {
+        "id": "3",
+        "value": "componentWillUpdate"
+      },
+      {
+        "id": "4",
+        "value": "componentDidUpdate"
+      }
+    ],
+    "answer": "2"
+  },
+  {
+    "id": 15,
+    "question": "React can be used for mobile development.",
+    "type": "binary",
+    "answer": true
+  },
+  {
+    "id": 16,
+    "question": "Which hook is best for memoizing expensive functions?",
+    "type": "multiple",
+    "choices": [
+      {
+        "id": "1",
+        "value": "useRef"
+      },
+      {
+        "id": "2",
+        "value": "useEffect"
+      },
+      {
+        "id": "3",
+        "value": "useMemo"
+      },
+      {
+        "id": "4",
+        "value": "useCallback"
+      }
+    ],
+    "answer": "3"
+  },
+  {
+    "id": 17,
+    "question": "Props are immutable.",
+    "type": "binary",
+    "answer": true
+  },
+  {
+    "id": 18,
+    "question": "What does a key prop do in a list?",
+    "type": "identification",
+    "answer": "identifies which items changed"
+  },
+  {
+    "id": 19,
+    "question": "Which method is used to render React content into the DOM?",
+    "type": "multiple",
+    "choices": [
+      {
+        "id": "1",
+        "value": "React.render()"
+      },
+      {
+        "id": "2",
+        "value": "ReactDOM.create()"
+      },
+      {
+        "id": "3",
+        "value": "ReactDOM.render()"
+      },
+      {
+        "id": "4",
+        "value": "React.mount()"
+      }
+    ],
+    "answer": "3"
+  },
+  {
+    "id": 20,
+    "question": "React supports server-side rendering.",
+    "type": "binary",
+    "answer": true
+  }
+]
