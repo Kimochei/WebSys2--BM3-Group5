@@ -39,7 +39,7 @@
 }
 
 .result-item.correct {
-    border-left-color: #4CAF50; /
+    border-left-color: #4CAF50;
 }
 
 .result-item.correct .status {
