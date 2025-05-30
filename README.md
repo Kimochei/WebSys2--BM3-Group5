@@ -11,7 +11,7 @@
 - Christian de Gala ([@unawarespecs](https://github.com/unawarespecs))
 - Clark Paglinawan
 - Kim Miguel Sobrepeña ([@Kimochei](https://github.com/Kimochei))
-- Mark Branon Acpal
+- Mark Branon Acpal ([@DefnotMark28](https://github.com/DefnotMark28))
 - Richard Pua
 
 ### Purpose
