@@ -25,7 +25,7 @@ function QuizResults({ questions, answers, score, onRestartQuiz }) {
     }
 
     return (
-        <div className="quiz-results">
+        <div className="quiz-results container">
             <h2>Quiz Results</h2>
             <p className="score">Your final score: {score} / {questions.length}</p>
             

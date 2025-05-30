@@ -1,18 +1,16 @@
-import './App.css'
+import './ReactQuiz.css'
 import QuestionNavigator from './QuestionNavigator';
 import './QuestionNavigator.css';
 import QuizResults from './QuizResults';
 import './QuizResults.css';
 import {useState, useEffect} from 'react';
 
-// this quiz is temporary, please check if there's something I missed or did wrong
-
 function Quiz() {
     const [questions, setQuestions] = useState([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [answers, setAnswers] = useState({});
     const [score, setScore] = useState(0);
-    const [quizCompleted, setQuizCompleted] = useState(false); 
+    const [quizCompleted, setQuizCompleted] = useState(false);
     const [quizStarted, setQuizStarted] = useState(false); // New State -kim
 
     useEffect(() => {
@@ -20,6 +18,8 @@ function Quiz() {
             .then(res => res.json())
             .then(data => setQuestions(data))
             .catch(err => console.error('Failed to load questions:', err));
+
+        document.title = 'A React Quiz';
     }, []); // Empty dependency array ensures this effect runs only once on mount
 
     const handleAnswerChange = (questionId, answer) => {
@@ -58,13 +58,13 @@ function Quiz() {
 
     const handleStartQuiz = () => {
         if (questions.length > 0) {
-        setQuizStarted(true);
-        setQuizCompleted(false);
-        setCurrentQuestionIndex(0);
-        setAnswers({});   
-        setScore(0);          
+            setQuizStarted(true);
+            setQuizCompleted(false);
+            setCurrentQuestionIndex(0);
+            setAnswers({});
+            setScore(0);
         } else {
-        console.warn("Questions are not loaded yet.")
+            console.warn("Questions are not loaded yet.")
         }
     };
 
@@ -94,24 +94,23 @@ function Quiz() {
 
     if (quizStarted && !quizCompleted) {
         if (!questions.length) {
-            return <p>Loading questions...</p>; 
+            return <p>Loading questions...</p>;
         }
 
         const question = questions[currentQuestionIndex];
         if (!question) {
-            return <p>Loading question...</p>; 
+            return <p>Loading question...</p>;
         }
 
-
-    const renderQuestion = () => {
+        const renderQuestion = () => {
             switch (question.type) {
                 case 'multiple':
                     return (
-                        <div>
-                            <p>{question.question}</p>
+                        <div className="question-container">
+                            <h3>{question.question}</h3>
                             {question.choices.map(choice => (
                                 <div key={choice.id}>
-                                    <label>
+                                    <label className={"custom-radio-btn"}>
                                         <input
                                             type="radio"
                                             name={`question-${question.id}`}
@@ -120,17 +119,20 @@ function Quiz() {
                                             onChange={() => handleAnswerChange(question.id, choice.id)}
                                         />
                                         {choice.value}
+                                        <input type="radio" name="radio"/>
+                                        <span className="checkmark"></span>
                                     </label>
                                 </div>
                             ))}
+                            <br/>
                         </div>
                     );
                 case 'binary':
                     return (
-                        <div>
-                            <p>{question.question}</p>
+                        <div className="question-container">
+                            <h3>{question.question}</h3>
                             <div>
-                                <label>
+                                <label className={"custom-radio-btn"}>
                                     <input
                                         type="radio"
                                         name={`question-${question.id}`}
@@ -139,10 +141,12 @@ function Quiz() {
                                         onChange={() => handleAnswerChange(question.id, 'true')}
                                     />
                                     True
+                                    <input type="radio" name="radio"/>
+                                    <span className="checkmark"></span>
                                 </label>
                             </div>
                             <div>
-                                <label>
+                                <label className={"custom-radio-btn"}>
                                     <input
                                         type="radio"
                                         name={`question-${question.id}`}
@@ -151,20 +155,26 @@ function Quiz() {
                                         onChange={() => handleAnswerChange(question.id, 'false')}
                                     />
                                     False
+                                    <input type="radio" name="radio"/>
+                                    <span className="checkmark"></span>
                                 </label>
                             </div>
+                            <br/>
                         </div>
                     );
                 case 'identification':
                     return (
-                        <div>
-                            <p>{question.question}</p>
+                        <div className="question-container">
+                            <h3>{question.question}</h3>
                             <input
                                 type="text"
                                 value={answers[question.id] || ''}
                                 onChange={e => handleAnswerChange(question.id, e.target.value)}
                             />
+                            <br/>
+                            <br/>
                         </div>
+
                     );
                 default:
                     return <p>Unsupported question type: {question.type}</p>;
@@ -172,24 +182,27 @@ function Quiz() {
         };
 
         return (
-            <div>
-                <QuestionNavigator 
-                totalQuestions={questions.length}
-                currentQuestionIndex={currentQuestionIndex}
-                onNavigate={handleNavigateToQuestion}/>
+            <>
+                <div className="container">
+                    <div>
+                        <QuestionNavigator
+                            totalQuestions={questions.length}
+                            currentQuestionIndex={currentQuestionIndex}
+                            onNavigate={handleNavigateToQuestion}/>
 
-                <h2>React Quiz - Question {currentQuestionIndex + 1} of {questions.length}</h2>
-                <h2>React Quiz</h2>
-                {renderQuestion()}
-                {questions[currentQuestionIndex] && (
-                    <button onClick={handleSubmitAnswer} disabled={answers[questions[currentQuestionIndex].id] === undefined}>
-                        {currentQuestionIndex < questions.length - 1 ? 'Next Question' : 'Submit Quiz'}
-                    </button>
-                )}
-            </div>
+                        <h2>React Quiz - Question {currentQuestionIndex + 1} of {questions.length}</h2>
+                        {renderQuestion()}
+                        {questions[currentQuestionIndex] && (
+                            <button onClick={handleSubmitAnswer}
+                                    disabled={answers[questions[currentQuestionIndex].id] === undefined}>
+                                {currentQuestionIndex < questions.length - 1 ? 'Next Question' : 'Submit Quiz'}
+                            </button>
+                        )}
+                    </div>
+                </div>
+            </>
         );
     }
-
 }
 
 export default Quiz

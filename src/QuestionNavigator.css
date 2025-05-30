@@ -4,7 +4,8 @@
     margin-bottom: 20px; 
     padding: 10px;
     border: 1px solid #444; 
-    justify-content: center; 
+    justify-content: center;
+    border-radius: 15px;
 }
 
 .nav-button {
@@ -24,6 +25,19 @@
 }
 
 .nav-button.current {
-    background-color: #646cff; 
+    background-color: #00ffd2;
+    color: #1a1a1a;
     font-weight: bold;
+}
+
+@media (prefers-color-scheme: light) {
+    .nav-button {
+        background-color: #f0f0f0;
+        color: black;
+    }
+
+    .nav-button:hover {
+        background-color: #bcbcbc;
+        border-color: #777;
+    }
 }
